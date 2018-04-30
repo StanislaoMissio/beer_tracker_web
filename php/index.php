@@ -1,332 +1,303 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Creative - Bootstrap 3 Responsive Admin Template" name="description">
-    <meta content="GeeksLabs" name="author">
-    <meta content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" name="keyword">
-    <link href="/img/favicon.png" rel="shortcut icon">
-    <title>GND Systems</title><!-- Bootstrap CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet"><!-- bootstrap theme -->
-    <link href="/css/bootstrap-theme.css" rel="stylesheet"><!--external css-->
-    <!-- font icon -->
-    <link href="/css/elegant-icons-style.css" rel="stylesheet">
-    <link href="/css/font-awesome.min.css" rel="stylesheet"><!-- date picker -->
-    <!-- color picker -->
-    <!-- Custom styles -->
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/style-responsive.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
 
-</head>
-<body>
-    <!-- container section start -->
-    <section class="" id="container">
-        <!--header start-->
-        <header class="header dark-bg">
-            <div class="toggle-nav">
-                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom">
-                    <i class="icon_menu"></i>
-                </div>
-            </div><!--inicio logo-->
-            <a class="logo" href="index.html">GND <span class="lite">Systems</span></a> <!--logo fim-->
-            <div class="nav search-row" id="top_menu"></div>
-            <div class="top-nav notification-row">
-                <!-- notificatoin dropdown start-->
-                <ul class="nav pull-right top-menu">
+    <title>Dashboard Template for Bootstrap</title>
 
-                    <!-- user login dropdown start-->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="profile-ava"><img alt="" src="/img/boni.jpg"></span> <span class="username">Ariele Bonif�cio</span> <b class="caret"></b></a>
-                        <ul class="dropdown-menu extended logout">
-                            <li style="list-style: none; display: inline">
-                                <div class="log-arrow-up"></div>
-                            </li>
-                            <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i> Meu Perfil</a>
-                            </li>
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-                            <li>
-                                <a href="login.html"><i class="fa-sign-out"></i> Sair</a>
-                            </li>
-                        </ul>
-                    </li><!-- user login dropdown end -->
-                </ul><!-- notificatoin dropdown end-->
+    <!-- Custom styles for this template -->
+    <link href="/css/dashboard.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <span data-feather="home"></span>
+                  Dashboard <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file"></span>
+                  Orders
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="shopping-cart"></span>
+                  Products
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  Customers
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  Reports
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="layers"></span>
+                  Integrations
+                </a>
+              </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Saved reports</span>
+              <a class="d-flex align-items-center text-muted" href="#">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Current month
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Last quarter
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Social engagement
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Year-end sale
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
             </div>
-        </header><!--header end-->
-        <!--sidebar start-->
-        <aside>
-            <div class="nav-collapse" id="sidebar">
-                <!-- sidebar menu start-->
-                <ul class="sidebar-menu">
-                    <li class="active">
-                        <a class="" href="index.html"><i class="icon_house_alt"></i> <span>Home</span></a>
-                    </li><!-- Menu e sub menu que abre ao clicar -->
-                    <li class="sub-menu">
-                        <a class="" href="javascript:;"><i aria-hidden="true" class="fa fa-beer"></i> <span>Receitas</span> <span class="menu-arrow arrow_carrot-right"></span></a>
-                        <ul class="sub">
-                            <li>
-                                <a class="" href="new-recipe.html">Nova Receita</a>
-                            </li><!-- Chama a tela de nova receita -->
-                            <li>
-                                <a class="" href="view-recipe.html">Visualizar</a>
-                            </li>
-                        </ul>
-                    </li><!-- Menu e sub menu que abre ao clicar -->
-                    <li class="menu">
-                        <a class="" href="javascript:;"><i aria-hidden="true" class="fa fa-users"></i> <span>Clientes</span></a>
-                    </li>
-                    <li><!-- Menu e sub menu que abre ao clicar --></li>
-                    <li class="menu">
-                        <a class="" href="javascript:;"><i aria-hidden="true" class="fa fa-list-ul"></i> <span>Pedidos</span></a>
-                    </li>
-                    <li class="menu">
-                        <a class="" href="javascript:;"><i class="icon_table"></i> <span>Lotes</span></a>
-                    </li>
-                    <li class="menu">
-                        <a class="" href="javascript:;"><i class="icon_documents_alt"></i> <span>Relat�rios</span></a>
-                    </li>
-                </ul><!-- sidebar menu end-->
-            </div>
-        </aside><!--sidebar end-->
-        <!--main content start-->
-        <section id="main-content">
-            <section class="wrapper">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h3 class="page-header"><i class="fa fa-file-text-o"></i> Nova Receita</h3>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-home"></i><a href="home.html">Home</a>
-                            </li>
-                            <li><i class="icon_document_alt"></i>Receita</li>
-                            <li><i class="fa fa-file-text-o"></i>Nova Receita</li>
-                        </ol>
-                    </div>
-                </div><!--painel de cadastro inicio -->
-                <!-- Titulo do painel -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <section class="panel">
-                            <header class="panel-heading">
-                                Nova Receita
-                            </header><!--Fim titulo painel -->
-                            <!-- Conte�do do painel -->
-                            <form action="cadastrar_receita.php" method="POST">
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">Nome da receita</label>
-                                        <div class="col-sm-10">
-                                            <input class="form-control" type="text" name="nome_receita">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">Dry Hopping</label>
-                                        <div class="col-sm-10">
-                                            <input class="form-control" type="text" name="dry_hopping"> <span class="help-block">Caso essa t�cnica seja aplicado na receita</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">Coment�rios</label>
-                                        <div class="col-sm-10">
-                                            <input class="form-control round-input" type="text" name="comentario_receita">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-lg-offset-2 col-lg-10">
-                                        <button class="btn btn-primary" type="submit">Salvar Receita</button> <button class="btn btn-default" type="button">Cancelar</button>
-                                    </div>
-                                </div>
+          </div>
 
-                                </FORM>
-                        </section>
-                    </div>
-                </div><!-- Titulo do painel de ingredientes -->
-                <!-- painel teste inicio -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <section class="panel">
-                            <header class="panel-heading">
-                                Ingredientes
-                            </header><!--Fim titulo painel -->
-                            <!-- Conte�do do painel -->
-                            <div class="panel-body">
-                                <!--dropdown inicio-->
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">Tipos Malte</label>
-                                    <div class="col-sm-9">
-                                        <select class="form-control" id="ingred1" name="ingred1">
-                                            <option value="1">
-                                                Cevada
-                                            </option>
-                                            <option value="2">
-                                                Trigo
-                                            </option>
-                                            <option value="2">
-                                                Arroz
-                                            </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">Tipos Lupulo</label>
-                                    <div class="col-md-9">
-                                        <select class="form-control" id="ingred2" name="ingred2">
-                                            <option value="1">
-                                                Lupulo 1
-                                            </option>
-                                            <option value="2">
-                                                Lupulo 2
-                                            </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">Tipos leveduras</label>
-                                    <div class="col-md-9">
-                                        <select class="form-control" id="ingred3" name="ingred3">
-                                            <option value="1">
-                                                Saccharomyces cerevisiae
-                                            </option>
-                                            <option value="2">
-                                                Saccharomyces uvarum
-                                            </option>
-                                            <option value="3">
-                                                Brettanomyces sp
-                                            </option>
-                                            <option value="4">
-                                                Saccharomyces bayanus
-                                            </option>
-                                        </select>
-                                    </div>
-                                </div><!-- dropdow fim -->
-                            </div>
-                        </section>
-                    </div>
-                </div><!-- Painel com os ingredientes -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <section class="panel">
-                            <header class="panel-heading">
-                                Ind�ces
-                            </header>
-                            <div class="panel-body">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <div class="input-group">
-                                                <label class="col-sm-2 control-label">Original Gravity</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="OG"> <span class="input-group-btn"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="input-group">
-                                                <label class="col-sm-2 control-label">Final Gravity</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="FG"> <span class="input-group-btn"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="input-group">
-                                                <label class="col-sm-2 control-label">International Bitter Units</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="IBU"> <span class="input-group-btn"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="input-group">
-                                                <label class="col-sm-2 control-label">Alcohol by Volume</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="ABV"> <span class="input-group-btn"></span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </section>
-                    </div>
-                </div><!-- Painel com tempos -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <section class="panel">
-                            <header class="panel-heading">
-                                Tempos
-                            </header>
-                            <div class="panel-body">
-                                <div class="form-group">
-                                    <div class="col-lg-30">
-                                        <table>
-                                            <tr>
-                                                <td>
-                                                    <div class="input-group">
-                                                        <label class="col-sm-2 control-label">Brassagem</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="brassagem"> <span class="input-group-btn"></span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="input-group">
-                                                        <label class="col-sm-2 control-label">Fervura</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="fervura"> <span class="input-group-btn"></span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="input-group">
-                                                        <label class="col-sm-2 control-label">Fermenta��o</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="fermentacao"> <span class="input-group-btn"></span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="input-group">
-                                                        <label class="col-sm-2 control-label">Rampa Ativa</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="rampa"> <span class="input-group-btn"></span>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <section class="panel">
-                            <header class="panel-heading">
-                                Rampa
-                            </header>
-                            <div class="panel-body">
-                                <div class="form-group">
-                                    <div class="col-lg-30">
-                                        <table>
-                                            <tr>
-                                                <td>
-                                                    <div class="input-group">
-                                                        <label class="col-sm-2 control-label">Varia��o</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="variacao"> <span class="input-group-btn"></span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="input-group">
-                                                        <label class="col-sm-2 control-label">Temperatura</label> <span class="input-group-btn"></span> <input class="form-control input-number" data-ride="spinner" id="spinner" type="number" value="0" name="temperatura"> <span class="input-group-btn"></span>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
+          <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
-                </div>
+          <h2>Section title</h2>
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>Integer</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>libero</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td>ante</td>
+                </tr>
+                <tr>
+                  <td>1,004</td>
+                  <td>dapibus</td>
+                  <td>diam</td>
+                  <td>Sed</td>
+                  <td>nisi</td>
+                </tr>
+                <tr>
+                  <td>1,005</td>
+                  <td>Nulla</td>
+                  <td>quis</td>
+                  <td>sem</td>
+                  <td>at</td>
+                </tr>
+                <tr>
+                  <td>1,006</td>
+                  <td>nibh</td>
+                  <td>elementum</td>
+                  <td>imperdiet</td>
+                  <td>Duis</td>
+                </tr>
+                <tr>
+                  <td>1,007</td>
+                  <td>sagittis</td>
+                  <td>ipsum</td>
+                  <td>Praesent</td>
+                  <td>mauris</td>
+                </tr>
+                <tr>
+                  <td>1,008</td>
+                  <td>Fusce</td>
+                  <td>nec</td>
+                  <td>tellus</td>
+                  <td>sed</td>
+                </tr>
+                <tr>
+                  <td>1,009</td>
+                  <td>augue</td>
+                  <td>semper</td>
+                  <td>porta</td>
+                  <td>Mauris</td>
+                </tr>
+                <tr>
+                  <td>1,010</td>
+                  <td>massa</td>
+                  <td>Vestibulum</td>
+                  <td>lacinia</td>
+                  <td>arcu</td>
+                </tr>
+                <tr>
+                  <td>1,011</td>
+                  <td>eget</td>
+                  <td>nulla</td>
+                  <td>Class</td>
+                  <td>aptent</td>
+                </tr>
+                <tr>
+                  <td>1,012</td>
+                  <td>taciti</td>
+                  <td>sociosqu</td>
+                  <td>ad</td>
+                  <td>litora</td>
+                </tr>
+                <tr>
+                  <td>1,013</td>
+                  <td>torquent</td>
+                  <td>per</td>
+                  <td>conubia</td>
+                  <td>nostra</td>
+                </tr>
+                <tr>
+                  <td>1,014</td>
+                  <td>per</td>
+                  <td>inceptos</td>
+                  <td>himenaeos</td>
+                  <td>Curabitur</td>
+                </tr>
+                <tr>
+                  <td>1,015</td>
+                  <td>sodales</td>
+                  <td>ligula</td>
+                  <td>in</td>
+                  <td>libero</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
 
-                <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-primary" type="submit">Salvar Receita</button> <button class="btn btn-default" type="button">Cancelar</button>
-                    </div>
-                </div>
-                
-            </section><!--main content end-->
-            <div class="text-center">
-                <div class="credits">
-                    <a href="http://fatecid.com.br/v2014/index.php">GND Systems</a> by <a href="http://fatecid.com.br/v2014/index.php">GND</a>
-                </div>
-            </div>
-        </section><!-- container section end -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="/javascript/popper.min.js"></script>
+    <script src="/javascript/bootstrap.min.js"></script>
 
-        <script src="/assets/ckeditor/ckeditor.js" type="text/javascript">
-        </script> <!-- custom form component script for this page-->
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
 
-    </section>
-</body>
+    <!-- Graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          datasets: [{
+            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
+  </body>
 </html>

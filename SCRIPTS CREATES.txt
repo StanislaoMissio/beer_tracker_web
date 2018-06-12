@@ -23,7 +23,8 @@ CREATE TABLE cliente(
 CREATE TABLE pedido(
     cod_pedido int AUTO_INCREMENT PRIMARY KEY,
     data_pedido DATE NOT NULL, 
-    data_entrega DATE NOT NULL, 
+    data_entrega DATE NOT NULL,
+    valor_pedido DECIMAL NOT NULL, 
     cod_cliente INT NOT NULL REFERENCES cliente (cod_cliente));
 	
 CREATE TABLE receita(
@@ -44,6 +45,7 @@ CREATE TABLE produto(
     cod_produto int AUTO_INCREMENT PRIMARY KEY, 
     ml VARCHAR(20),
     nome_produto VARCHAR(20),
+    preco_produto DECIMAL NOT NULL,
     cod_receita INT NOT NULL REFERENCES receita (cod_receita));
 
 CREATE TABLE item_pedido(

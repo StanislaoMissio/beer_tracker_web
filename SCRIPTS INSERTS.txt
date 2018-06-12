@@ -6,7 +6,7 @@ INSERT INTO cliente VALUES (1, 'Bar do Osmar', '9029102930', '13320000', 'Rua fa
 SELECT * FROM cliente;
 
 
-INSERT INTO pedido VALUES (1, '2018-04-06', '2018-06-06', 1);
+INSERT INTO pedido VALUES (1, '2018-04-06', '2018-06-06', 1, 100.00);
 SELECT * FROM pedido;
 
 
@@ -14,7 +14,7 @@ INSERT INTO receita VALUES (1, 'Pale Ale', 'Cerveja Pale Ale', '500', '300', '20
 SELECT * FROM receita;
 
 
-INSERT INTO produto VALUES (1, '600', 'Cerveja Pale Ale', '1');
+INSERT INTO produto VALUES (1, '600', 'Cerveja Pale Ale', '1', 10.00);
 SELECT * FROM produto;
 
 

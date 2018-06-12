@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <?php require_once('init.php');?>
   <body>
@@ -92,9 +92,7 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<div class="modal-body">
-						<input type="text" id="ingredienteDeleteCod">					
-					</div>
+						<input type="hidden" id="ingredienteDeleteCod">					
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 						<button type="button" class="btn btn-primary"   onclick="deleteIngrediente()">Deletar</button>
@@ -103,6 +101,6 @@
 			</div>
 		</div>
 
-    <script src="/js/dist/ingredientes.js"></script>
+    <script src="/dist/js/ingredientes.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,13 +8,9 @@
 
     <title>GND | Systems</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
     <link href="/dist/css/dashboard.css" rel="stylesheet">
-    <link href="/fonts/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
-
+    <link href="/fonts/FontAwesome/css/font-awesome.css" rel="stylesheet">
   </head>
 
   <body>
@@ -39,11 +35,6 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" onclick="chamarTela('pedidos')">
-                  <span data-feather="file"></span>
-                  Pedidos
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
                   Pedidos
                 </a>
               </li>
@@ -230,13 +221,39 @@
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>    
     <script src="/dist/js/bootstrap.min.js"></script>
-    <script src="/js/dist/index.js"></script>    
+    <script src="/dist/js/index.js"></script>    
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          datasets: [{
+            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
   </body>
 </html>

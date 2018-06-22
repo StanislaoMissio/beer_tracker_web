@@ -4,7 +4,7 @@ function addProduto() {
 
   $.ajax({
     type: "POST",
-    url: "produtos-list-pedidos.php",
+    url: "../list/produtos-list-pedidos.php",
     data: { cod: value }
   }).done(function( json ) {
     $("#tableProdutos").last().append(json);

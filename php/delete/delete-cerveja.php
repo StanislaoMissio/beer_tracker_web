@@ -1,17 +1,17 @@
-<?php require_once('init.php');
+<?php require_once('../utils/init.php');
     
-$PDO = db_connect(); 
+  $PDO = db_connect(); 
 
-$cod = $_GET["cod_receita"];
+  $cod = $_GET["cod_receita"];
 
-$sql = "DELETE FROM receita WHERE cod_receita=$cod";
+  $sql = "DELETE FROM receita WHERE cod_receita = :cod";
 
-$statement = $PDO->prepare($sql);
+  $statement = $PDO->prepare($sql);
+  $statement->bindParam(":cod", $cod);
 
-if ($statement->execute(['cod_receita' => $cod_receita])) {
-
-  header("Location: receitas-ca.php");
-}
+  if ($statement->execute()) {
+    header("Location: receitas-ca.php");
+  }
 
 ?>
 

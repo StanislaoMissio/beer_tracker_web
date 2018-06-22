@@ -1,5 +1,5 @@
 <?php 
-require_once('init.php');
+require_once('../utils/init.php');
 
 $codPedido = $_POST['cod'];
 

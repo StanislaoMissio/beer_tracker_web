@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<?php require_once('init.php');?>
+<?php require_once('../utils/init.php');?>
   <body>
     <main role="main">
       <h2>Administração de acessos</h2></br>
@@ -51,7 +51,7 @@
         </table>
       </div>
                 
-        <button type="button" class="btn" onclick="location.href='login_registrar.php'">
+        <button type="button" class="btn" onclick="location.href='../register/login_registrar.php'">
         Novo Usuário
       </button>
     </main>
@@ -110,6 +110,6 @@
 			</div>
 		</div>
 
-    <script src="/js/dist/acessos.js"></script>
+    <script src="/dist/js/acessos.js"></script>
   </body>
 </html>

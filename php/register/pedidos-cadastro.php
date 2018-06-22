@@ -1,5 +1,5 @@
 <!doctype html>
-<?php require_once('init.php');?>
+<?php require_once('../utils/init.php');?>
 <html lang="en">
   <head>
     <meta charset="utf-8">

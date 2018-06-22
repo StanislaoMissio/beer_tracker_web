@@ -1,5 +1,5 @@
 <?php
-    require_once('init.php');
+    require_once('../utils/init.php');
 
     // pega os dados do formuário
     $cod = isset($_POST['cod']) ? $_POST['cod'] : null;

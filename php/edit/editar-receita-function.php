@@ -1,5 +1,5 @@
 <?php
-require_once('init.php');
+require_once('../utils/init.php');
 
 //Verificar se o usuário clicou no botão, clicou no botão acessa o IF e tenta cadastrar, caso contrario acessa o ELSE
 $edit = filter_input(INPUT_POST, 'edit', FILTER_SANITIZE_STRING);

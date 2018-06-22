@@ -1,6 +1,6 @@
 <!doctype html>
 
-<?php require_once('init.php');?>
+<?php require_once('../utils/init.php');?>
 
 <html lang="en">
   <head>
@@ -20,9 +20,9 @@
     <link href="../dist/css/elegant-icons-style.css" rel="stylesheet">
 
     <script language="JavaScript" type="text/javascript">
-      function deletar_saporra(cod_fornecedor) {
-        if (confirm('Confirma deleção do fornecedor?')) {
-          window.location.href = 'delete-fornecedor.php?cod_fornecedor=' + cod_fornecedor;
+      function deletar(cod_receita) {
+        if (confirm('Confirma deleção desta receita?')) {
+          window.location.href = 'delete-cerveja.php?cod_receita=' + cod_receita;
         }
         return false;
       }
@@ -36,7 +36,7 @@
       
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="login.php">Sair</a>
+          <a class="nav-link" href="login.php">Sign out</a>
         </li>
       </ul>
     </nav>
@@ -47,14 +47,13 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Home <span class="sr-only">(current)</span>
+                <a class="nav-link" href="index.php">
+                  Home
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="receitas-ca.php">
-                  <span data-feather="file"></span>
+                  <span class="fa fa-beer"></span>
                   Receitas
                 </a>
               </li>
@@ -65,7 +64,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="fornecedor.php">
                   <span data-feather="users"></span>
                   Fornecedores
                 </a>
@@ -96,6 +95,8 @@
               </li>            
             </ul>
           </div>
+      </div>
+    </div>    
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
@@ -103,61 +104,62 @@
            
           </div>
         
-        <!--Consulta MySQL para popular tabela com fornecedores cadastrados-->             
+        <!--Consulta MySQL para popular tabela com receitas cadastradas-->             
               
         <?php  
-              $PDO = db_connect(); 
+          $PDO = db_connect(); 
 
-              $sql = "SELECT * FROM fornecedor";
-      
-              $stmt = $PDO->prepare($sql);
-              $stmt->execute();
-              $info = $stmt->fetchAll();
+          $sql = "SELECT * FROM receita";
+  
+          $stmt = $PDO->prepare($sql);
+          $stmt->execute();
+          $info = $stmt->fetchAll();
         ?>
-        <!--Fim consulta MySQL que popula tabela-->          
+        <!--Fim consulta MySQL-->          
 
         <div class="row">
           <div class="col-md-8">
-            <h2>Fornecedores</h2>
+            <h2>Receitas</h2>
           </div>
 
           <div class="col-md-4">
-            <a class="btn btn-primary" href="fornecedor-cadastro.php" role="button">+ Adicionar Fornecedor</a>            
+            <a class="btn btn-primary" href="cadastro-receita.php" role="button">+ Adicionar Receita</a>            
           </div>
         </div>
-
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
-                <th>ID</th>
-                <th>Nome Fornecedor</th>
-                <th>Telefone</th>
-                <th>E-mail</th>
-                <th>Ingrediente</th>
-                <th class="actions">Ações</th>
+                  <th>ID</th>
+                  <th>Nome da receita</th>
+                  <th>OG</th>
+                  <th>FG</th>
+                  <th>IBU</th>
+                  <th>ABV</th>
+                  <th>Ações</th>
                 </tr>
               </thead>
-            <?php foreach($info as $row): ?>              
-                <tbody>
+              <?php foreach($info as $row): ?>                     
+                           
+              <tbody>
                 <tr>
-                  <td><?=$row["cod_fornecedor"]?></td>
-                  <td><?=$row["razao_social_fornecedor"]?></td>
-                  <td><?=$row["telefone_fornecedor"]?></td>
-                  <td><?=$row["email_fornecedor"]?></td>
-                  <td><?=$row["cidade_fornecedor"]?></td>
+                  <td><?=$row["cod_receita"]?></td>
+                  <td><?=$row["nome_receita"]?></td>
+                  <td><?=$row["indice_og"]?></td>
+                  <td><?=$row["indice_fg"]?></td>
+                  <td><?=$row["indice_ibu"]?></td>
+                  <td><?=$row["indice_abv"]?></td>
                   <td class="actions">
-                  <button class="btn btn-large btn-success" onclick="RemoveTableRow(this)" type="button">Visualizar</button>
+                    <button class="btn btn-large btn-success">Visualizar</button>
+                    
+                    <a class="btn btn-large btn-primary"
+                      href="editar-receita.php?cod_receita=<?=$row['cod_receita']?>">Editar</a>
 
-                  <a class="btn btn-large btn-primary"
-                  href="Editar-fornecedor.php?cod_fornecedor=<?=$row['cod_fornecedor']?>">Editar</a>
-
-                  
-                  <button class="btn btn-large btn-danger" onclick='deletar_saporra(<?=$row["cod_fornecedor"]?>)'>Remover</button>
+                    <button class="btn btn-large btn-danger" onclick='deletar(<?=$row["cod_receita"]?>)'>Remover</button>
                   </td>
                 </tr>                               
-                </tbody>
-            <?php endforeach; ?>
+              </tbody>
+                <?php endforeach; ?>
             </table>
           </div>
         </main>

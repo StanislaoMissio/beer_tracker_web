@@ -44,12 +44,12 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" onclick="chamarTela('ingredientes')">
+                <a class="nav-link" href="#" onclick="chamarTela('ingredientes')">
                   Ingredientes
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" onclick="chamarTela('fornecedor')">
                   Fornecedores
                 </a>
               </li>

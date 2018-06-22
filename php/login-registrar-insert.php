@@ -1,6 +1,6 @@
 <?php
 
-require_once('init.php');
+require_once('../utils/init.php');
 
 $nome = isset($_POST['nome']) ? $_POST['nome'] : null;
 $login = isset($_POST['login']) ? $_POST['login'] : null;   

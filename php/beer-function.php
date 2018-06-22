@@ -1,4 +1,4 @@
-<?php require_once('init.php');
+<?php require_once('../utils/init.php');
 
     $PDO = db_connect(); 
 

@@ -1,5 +1,5 @@
 <?php
-    require_once("init.php");
+    require_once("../utils/init.php");
 
     $codIngrediente = $_POST["cod"];
     $nomeIngrediente = $_POST["nome"];

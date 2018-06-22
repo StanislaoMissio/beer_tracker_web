@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require_once('init.php');?>
+<?php require_once('../utils/init.php');?>
   <body>
     <main role="main">
       <h2>Todos os Pedidos</h2>
@@ -53,7 +53,7 @@
         </table>
       </div>
                 
-        <button type="button" class="btn" onclick="location.href='pedidos-cadastro.php'">
+        <button type="button" class="btn" onclick="location.href='../register/pedidos-cadastro.php'">
         Novo Pedido
       </button>
     </main>

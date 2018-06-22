@@ -1,16 +1,16 @@
-<?php require_once('init.php');
+<?php require_once('../utils/init.php');
     
-$PDO = db_connect(); 
+  $PDO = db_connect(); 
 
-$cod1 = $_GET["cod_fornecedor"];
+  $cod = $_GET["cod_fornecedor"];
 
-$sql = "DELETE FROM fornecedor WHERE cod_fornecedor=$cod1";
+  $sql = "DELETE FROM fornecedor WHERE cod_fornecedor = :cod";
 
-$statement = $PDO->prepare($sql);
+  $statement = $PDO->prepare($sql);
+  $statement->bindParam(':cod',$cod);
 
-if ($statement->execute(['cod_fornecedor' => $cod_fornecedor])) {
-
-  header("Location: fornecedor.php");
-}
+  if ($statement->execute()) {
+    header("Location: fornecedor.php");
+  }
 
 ?>

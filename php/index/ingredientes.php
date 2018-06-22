@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php require_once('init.php');?>
+<?php require_once('../utils/init.php');?>
   <body>
     <main role="main">
-      <h2>Todos os Ingredientes</h2>
+      <div class="col-md-8">
+        <h2>Todos os Ingredientes</h2>
+      </div>
+      <div class="col-md-4">
+        <button type="button" class="btn" onclick="location.href='../register/ingrediente-cadastro.php'">
+          Novo Ingrediente
+        </button>           
+      </div>
       <div class="table-responsive" id="table">
         <table class="table table-striped table-sm" id="">
           <thead>
@@ -47,10 +54,6 @@
           </tbody>
         </table>
       </div>
-                
-        <button type="button" class="btn" onclick="location.href='ingrediente-cadastro.php'">
-        Novo Ingrediente
-      </button>
     </main>
 
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

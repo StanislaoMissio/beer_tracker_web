@@ -1,5 +1,5 @@
 <?php
-    require_once('init.php');
+    require_once('../utils/init.php');
 
     // pega os dados do formuário
     $cnpj = isset($_POST['cnpj']) ? $_POST['cnpj'] : null;

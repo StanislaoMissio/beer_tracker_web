@@ -1,7 +1,7 @@
 <?php 
  
 // inclui o arquivo de inicialização
-require_once('init.php');
+require_once('../utils/init.php');
  
 // resgata variáveis do formulário
 $login = isset($_POST['login']) ? $_POST['login'] : '';

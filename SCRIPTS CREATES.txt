@@ -88,3 +88,11 @@ CREATE TABLE fornecedor(
     pais_fornecedor VARCHAR(20),
     telefone_fornecedor VARCHAR(20), 
     email_fornecedor VARCHAR(50));
+
+CREATE TABLE log (
+    cod_log int NOT NULL AUTO_INCREMENT,
+    data_hora_log datetime NOT NULL,
+    usuario varchar(50),
+    acao varchar(100),
+    PRIMARY KEY (cod_log)
+);

@@ -23,7 +23,7 @@
             </td>");
         echo("<td class='align-middle text-center'><span id='".$produto['cod_produto']."'>R$ 0,00</span></td>");
         echo("<td class='align-middle'> 
-                <button type='button' class='btn btn-primary' data-toggle='modal'
+                <button type='button' class='btn btn-primary' data-toggle='modal'>
                 <span class='fa fa-trash' aria-hidden='true'></span>
                 </button>
             </td>");

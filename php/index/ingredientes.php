@@ -3,16 +3,18 @@
 <?php require_once('../utils/init.php');?>
   <body>
     <main role="main">
-      <div class="col-md-8">
-        <h2>Todos os Ingredientes</h2>
-      </div>
-      <div class="col-md-4">
-        <button type="button" class="btn" onclick="location.href='../register/ingrediente-cadastro.php'">
-          Novo Ingrediente
-        </button>           
+      <div class="row">
+        <div class="col-md-9">
+          <h2>Ingredientes</h2>
+        </div>
+        <div class="float-lg-right">
+        <button type="button" class="btn btn-primary" onclick="location.href='../register/ingrediente-cadastro.php'">
+          + Adicionar Ingrediente
+          </button>            
+        </div>
       </div>
       <div class="table-responsive" id="table">
-        <table class="table table-striped table-sm" id="">
+        <table class="table table-striped table-sm">
           <thead>
             <tr>
               <th>#</th>
@@ -37,7 +39,7 @@
 													<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" 
 													data-cod="'.$ingrediente["cod_ingrediente"].'" 
 													data-nome="'.$ingrediente["nome_ingrediente"].'">
-														<span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+														<span class="fa fa-edit" aria-hidden="true"></span>
                         	</button>
                         </td>
                         <td class="align-middle"> 

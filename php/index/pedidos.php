@@ -2,8 +2,16 @@
 <html lang="en">
 <?php require_once('../utils/init.php');?>
   <body>
-    <main role="main">
-      <h2>Todos os Pedidos</h2>
+    <main role="main"><div class="row">
+      <div class="col-md-9">
+          <h2>Todos os Pedidos</h2>
+        </div>
+        <div class="float-lg-right">
+          <button type="button" class="btn btn-primary" onclick="location.href='../register/pedidos-cadastro.php'">
+            Novo Pedido
+          </button>            
+        </div>
+      </div>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
@@ -35,7 +43,7 @@
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModalPedido" 
                           data-cod="'.$pedido["cod_pedido"].'" 
                           data-nome="'.$pedido["razao_social"].'">           
-                            <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                            <span class="fa fa-edit" aria-hidden="true"></span>
                           </button>
                         </td>
                         <td class="align-middle"> 

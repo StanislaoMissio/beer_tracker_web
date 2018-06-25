@@ -10,7 +10,7 @@
 
     <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/dist/css/dashboard.css" rel="stylesheet">
-    <link href="/fonts/FontAwesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   </head>
 
   <body>
@@ -30,41 +30,49 @@
             <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link" href="index.php">
+                <span class="fas fa-home"></span>
                   Home
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" onclick="chamarTela('pedidos')">
+                <span class="fas fa-list-alt"></span>
                   Pedidos
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" onclick="chamarTela('receitas')">
+                <span class="fas fa-paste"></span>
                   Receitas
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" onclick="chamarTela('ingredientes')">
+                <span class="fas fa-utensils"></span>
                   Ingredientes
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" onclick="chamarTela('fornecedor')">
+                <span class="fas fa-dolly"></span>
                   Fornecedores
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" onclick="chamarTela('')">
+                <span class="fas fa-box"></span>
                   Lotes
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
+                <span class="fas fa-pen"></span>
                   Relatorios
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" onclick="chamarTela('login_adm')">
+                <span class="fas fa-user"></span>
                   Administração de acessos
                 </a>
               </li>
@@ -75,16 +83,6 @@
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" id="main">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Dashboard</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary">Share</button>
-                <button class="btn btn-sm btn-outline-secondary">Export</button>
-              </div>
-              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                <span data-feather="calendar"></span>
-                This week
-              </button>
-            </div>
           </div>
 
           <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
@@ -225,35 +223,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>    
     <script src="/dist/js/bootstrap.min.js"></script>
-    <script src="/dist/js/index.js"></script>    
-    <script>
-      var ctx = document.getElementById("myChart");
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-            lineTension: 0,
-            backgroundColor: 'transparent',
-            borderColor: '#007bff',
-            borderWidth: 4,
-            pointBackgroundColor: '#007bff'
-          }]
-        },
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: false
-              }
-            }]
-          },
-          legend: {
-            display: false,
-          }
-        }
-      });
-    </script>
+    <script src="/dist/js/index.js"></script>
   </body>
 </html>

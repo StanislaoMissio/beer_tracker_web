@@ -11,6 +11,7 @@
 
     <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/dist/css/form-validation.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   </head>
 
   <body class="bg-secondary">
@@ -60,7 +61,17 @@
                 </div>
               </div>
             </div>
-            <h4 class="mb-3">Produtos</h4>
+        <div class="row">
+          <div class="col-md-9">
+            <h2>Produtos</h2>
+          </div>
+
+          <div class="float-lg-right">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
+            + Adicionar Produto
+            </button>            
+          </div>
+        </div>
 
             <div class="table-responsive">
               <table class="table table-striped table-sm" id="tableProdutos">
@@ -77,11 +88,11 @@
                 <tbody>
                 </tbody>
                 </table>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">Adicionar</button>
             <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="cadastrarPedido()">Cadastrar</button>
           </form>
         </div>
       </div>
+      </div>  
 
       <div class="modal fade" id="addModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">

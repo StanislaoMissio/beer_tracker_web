@@ -3,9 +3,18 @@
 <?php require_once('../utils/init.php');?>
   <body>
     <main role="main">
-      <h2>Administração de acessos</h2></br>
+      <div class="row">
+        <div class="col-md-9">
+          <h2>Administração de acessos</h2>
+        </div>
+        <div class="float-lg-right">
+          <button type="button" class="btn btn-primary" onclick="location.href='../register/login_registrar.php'">
+            Novo Usuário
+          </button>            
+        </div>
+      </div>
       <div class="table-responsive" id="table">
-        <table class="table table-striped table-sm" id="">
+        <table class="table table-striped table-sm">
           <thead>
             <tr>
               <th>#</th>
@@ -33,7 +42,7 @@
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal"
                         data-cod="'.$usuario["cod_usuario"].'" 
                         data-nome="'.$usuario["nome_usuario"].'">
-                        <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                        <span class="fa fa-edit" aria-hidden="true"></span>
                     </button>
                 </td>
                 <td class="align-middle">
@@ -50,10 +59,6 @@
           </tbody>
         </table>
       </div>
-                
-        <button type="button" class="btn" onclick="location.href='../register/login_registrar.php'">
-        Novo Usuário
-      </button>
     </main>
 
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

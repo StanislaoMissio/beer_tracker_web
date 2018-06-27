@@ -58,23 +58,23 @@
             <div class="row">
               <div class="form-group col-md-3">
                 <label>Início</label>
-                    <input type="date" id="date" name="inicio">
+                    <input class="form-control" type="date" id="date" name="inicio">
               </div>
 
 
               <div class="form-group col-md-3">
                 <label>Envase</label>
-                    <input type="date" id="date" name="envase">
+                    <input class="form-control" type="date" id="date" name="envase">
               </div>
 
               <div class="form-group col-md-3">
                 <label>Fermentação</label>
-                    <input type="date" id="date" name="fermentacao">
+                    <input class="form-control" type="date" id="date" name="fermentacao">
               </div>
 
               <div class="form-group col-md-3">
                 <label>Término</label>
-                    <input type="date" id="date" name="termino">
+                    <input class="form-control" type="date" id="date" name="termino">
               </div>
             </div>
 
@@ -118,7 +118,7 @@
             
             <div class="text-center">
                 <div class="credits">
-                    <a href="http://fatecid.com.br/v2014/index.php">GND Systems</a> by <a href="http://fatecid.com.br/v2014/index.php">GND</a>
+                    <a href="index.php">GND Systems</a> by <a href="http://fatecid.com.br/v2014/index.php">GND</a>
                 </div>
             </div>
             </form>

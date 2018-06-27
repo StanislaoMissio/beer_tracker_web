@@ -92,7 +92,7 @@
           </form>
         </div>
       </div>
-      </div>  
+    </div>  
 
       <div class="modal fade" id="addModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">

@@ -3,215 +3,115 @@
 <?php require_once('../utils/init.php');?>
 
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../img/favicon.png">
 
-    <title>GND | Systems</title>
+    <title>Cadastrar novo Fornecedor</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="../dist/css/dashboard.css" rel="stylesheet">
-    <!-- font icon -->
-    <link href="../dist/css/elegant-icons-style.css" rel="stylesheet">
-    <link href="../dist/css/font-awesome.min.css" rel="stylesheet">
-    
+    <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/dist/css/form-validation.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   </head>
 
-  <body>
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Cervejaria Karavelle</a>
-      
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sair</a>
-        </li>
-      </ul>
-    </nav>
+  <body class="bg-secondary">
+  <?php  
+    $PDO = db_connect(); 
 
-    <div class="container-fluid">
-      <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-          <div class="sidebar-sticky">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">
-                
-                  Home 
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="receitas-ca.php">
-                  <span class="fa fa-beer"></span>
-                  Receitas
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Ingredientes
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="fornecedor.php">
-                  <span data-feather="users"></span>
-                  Fornecedores
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  Pedidos
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
-                  Lotes
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
-                  Relatórios
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
-                  Administração de acessos
-                </a>
-              </li>            
-            </ul>
-          </div>
-      </div>
-    </div>    
-        </nav>
+    $sql = "SELECT * FROM ingrediente";
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-           
-          </div>         
-
-          <h2>Fornecedores</h2>
-
-            <!-- Conteúdo do painel -->
-            <form action="cadastro-fornecedor-function.php" method="POST">
-                    <div class="panel-body">
-
-                      <!--Consulta MySQL para popular dropdown-->
-                      <?php  
-                              $PDO = db_connect(); 
-
-                              $sql = "SELECT * FROM ingrediente";
-                      
-                              $stmt = $PDO->prepare($sql);
-                              $stmt->execute();
-                              $info = $stmt->fetchAll();
-                            ?>     
-
-                        <div class="form-group col-md-10">
-                          <label>Ingrediente</label>
-                          <select class="form-control" name="ingred">
-                            <!-- Lista ingrediente cadastrados - Banco -->
-                            <?php foreach($info as $ingred): ?>
-                            <option value="<?=$ingred["cod_ingrediente"]?>"><?=$ingred["nome_ingrediente"]?></option>
-                            <?php endforeach; ?>
-                            <!-- Lista ingrediente cadastrados - Banco -->
-                          </select>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Razão Social</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="text" name="razao_social">
-                            </div>
-                        </div>
-                        <!--Campo CNPJ-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">CNPJ</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="text" name="cnpj">                                            
-                            </div>                                        
-                        </div>
-                        <!--Campo CNPJ-->   
-                    
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">CEP</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="text" name="cep">                                            
-                            </div>                                        
-                        </div>  
-
-                        <!--Campo endereço-->      
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Endereço</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="text" name="endereco">                                            
-                            </div>                                        
-                        </div>
-
-                        <!--Campo cidade-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Cidade</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="text" name="cidade">                                            
-                            </div>                                        
-                        </div>
-
-                        <!--Campo Estado-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Estado</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="text" name="estado">                                            
-                            </div>                                        
-                        </div>
-
-                        <!--Campo Pais-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">País</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="text" name="pais">                                            
-                            </div>                                        
-                        </div>
-                        
-                        <!--Campo Telefone-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Telefone</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="text" name="telefone">                                            
-                            </div>                                        
-                        </div>
-
-                        <!--Campo E-mail-->
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">E-mail</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="text" name="email">                                            
-                            </div>                                        
-                        </div>
-
-                        
-
-                    </div>                          
-                                               
-                    </div>                    
-                </div>                             
-                <!--Botões-->
-                <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-primary" type="submit" name="submit">Salvar Fornecedor</button> <button class="btn btn-default" type="button">Cancelar</button>
-                    </div>
-                </div> 
-                <!--Fim botões-->            
+    $stmt = $PDO->prepare($sql);
+    $stmt->execute();
+    $info = $stmt->fetchAll();
+  ?>
+  <div class="container">
+    <div class="py-5 text-center">
+      <h2 class="text-light">Fornecedores</h2>
+    </div>
+      <div class="card">
+        <div class="card-body">
+          <form class="needs-validation" novalidate action="cadastro-fornecedor-function.php" method="POST">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label>Ingrediente</label>
+                <select class="form-control" name="ingred">
+                  <?php foreach($info as $ingred): ?>
+                  <option value="<?=$ingred["cod_ingrediente"]?>"><?=$ingred["nome_ingrediente"]?></option>
+                  <?php endforeach; ?>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>Razão Social</label>
+                <input type="text" class="form-control" name="razao_social" placeholder="Razão social" value="" required>
+                <div class="invalid-feedback">
+                  Insira a Razão Social.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>CNPJ</label>
+                <input type="text" class="form-control" name="cnpj" placeholder="CNPJ" value="" required>
+                <div class="invalid-feedback">
+                  Insira CNPJ.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>CEP</label>
+                <input class="form-control" type="text" name="cep"  placeholder="Razão social" value="" required>  
+                <div class="invalid-feedback">
+                  Insira o CEP.
+                </div>                                          
+              </div>  
+              <div class="col-md-6 mb-3">
+                <label>Endereço</label>
+                <input class="form-control" type="text" name="endereco">                                            
+                <div class="col-sm-10">
+                </div>                                        
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>Cidade</label>
+                <input class="form-control" type="text" name="cidade">                                            
+                <div class="col-sm-10">
+                </div>                                        
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>Estado</label>
+                <input class="form-control" type="text" name="estado">                                            
+                <div class="col-sm-10">
+                </div>                                        
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>Pais</label>
+                <input class="form-control" type="text" name="pais">                                            
+                <div class="col-sm-10">
+                </div>                                        
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>Telefone</label>
+                <input class="form-control" type="text" name="telefone">                                            
+                <div class="col-sm-10">
+                </div>                                        
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>E-mail</label>
+                <input class="form-control" type="text" name="email">                                            
+                <div class="col-sm-10">
+                </div>                                        
+              </div>                    
+                    <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit">Salvar Fornecedor</button> 
             </form>            
           </div>
         </main>
       </div>
+      </div>
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1 text-light">&copy; 2017-2018 GND Systems</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a class="text-light" href="#">Privacy</a></li>
+          <li class="list-inline-item"><a class="text-light" href="#">Terms</a></li>
+          <li class="list-inline-item"><a class="text-light" href="#">Support</a></li>
+        </ul>
+      </footer>
   </body>
 </html>

@@ -60,7 +60,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" onclick="chamarTela('')">
+                <a class="nav-link" href="#" onclick="chamarTela('lotes')">
                 <span class="fas fa-box"></span>
                   Lotes
                 </a>

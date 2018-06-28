@@ -32,12 +32,6 @@
 
   <body>
         <main role="main">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-           
-          </div>
-        
-        <!--Consulta MySQL para popular tabela com fornecedores cadastrados-->             
-              
         <?php  
               $PDO = db_connect(); 
 
@@ -47,8 +41,6 @@
               $stmt->execute();
               $info = $stmt->fetchAll();
         ?>
-        <!--Fim consulta MySQL que popula tabela-->          
-
         <div class="row">
           <div class="col-md-8">
             <h2>Fornecedores</h2>

@@ -89,6 +89,10 @@ CREATE TABLE fornecedor(
     telefone_fornecedor VARCHAR(20), 
     email_fornecedor VARCHAR(50));
 
+CREATE TABLE fornecedor_ingrediente (
+	cod_ingrediente int not null REFERENCES ingrediente(cod_ingrediente),
+    cod_fornecedor int not null REFERENCES fornecedor(cod_fornecedor));
+
 CREATE TABLE log (
     cod_log int NOT NULL AUTO_INCREMENT,
     data_hora_log datetime NOT NULL,

@@ -17,7 +17,7 @@ $cod_ingrediente = isset($_POST['email']) ? $_POST['email'] : null;
 
     $sql = "INSERT INTO fornecedor (razao_social_fornecedor, cnpj_fornecedor, cep_fornecedor,
             endereco_fornecedor,cidade_fornecedor, estado_fornecedor, pais_fornecedor, telefone_fornecedor, email_fornecedor)
-            VALUES (':razao', ':cnpj', ':cep', ':endereco', ':cidade', ':estado', ':pais',':telefone', ':email')";          
+            VALUES (:razao, :cnpj, :cep, :endereco, :cidade, :estado, :pais, :telefone, :email)";          
 
     $stmtFornecedor = $PDO->prepare($sql);
     $stmtFornecedor->bindParam(":razao", $razao_social_fornecedor, PDO::PARAM_STR);
@@ -38,7 +38,7 @@ $cod_ingrediente = isset($_POST['email']) ? $_POST['email'] : null;
 
     $sql = "INSERT INTO fornecedor_ingrediente
     (cod_ingrediente, cod_fornecedor)
-    VALUES (':cod_ingrediente', ':cod_fornecedor')";
+    VALUES (:cod_ingrediente, :cod_fornecedor)";
 
     $stmtIngrediente = $PDO->prepare($sql);
     $stmtIngrediente->bindParam(":cod_ingrediente", $cod_ingrediente, PDO::PARAM_INT);

@@ -19,10 +19,10 @@ $stmt = $PDO->prepare($sql);
 $stmt->bindParam(':nome', $nome);
 $stmt->bindParam(':login', $login);
 $stmt->bindParam(':email', $email);
-$stmt->bindParam(':senha', $senha);
+$stmt->bindParam(':senha', md5($senha));
 
 if ($stmt->execute()){
-    header("Refresh:0; url=login_adm.php");
+    header("Refresh:0; url=login.php");
 }
 else{
     echo "Erro ao cadastrar";

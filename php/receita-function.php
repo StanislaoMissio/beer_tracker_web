@@ -76,7 +76,7 @@ if (isset($_POST["submit"]))
         $stmt = $PDO->prepare($sql);
         $stmt->execute();
 
-        //header('Location: receitas-ca.php');    
+        header('Location: receitas-ca.php');    
 
 }
 

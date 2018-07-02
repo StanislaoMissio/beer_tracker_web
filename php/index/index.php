@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php require_once("../utils/init.php"); ?>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -17,12 +17,42 @@
   <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="index.php">GND Systems</a>
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sair</a>
-        </li>
-      </ul>
     </nav>
+
+    <?php 
+      $PDO = db_connect();
+      $sqlIngredientes = "SELECT COUNT(cod_ingrediente) FROM ingrediente";
+      $result = $PDO->prepare($sqlIngredientes);
+      if($result->execute()){
+        $ingredientes = $result->fetchColumn();
+      } else {
+        echo($result->errorInfo());
+      }
+
+      $sqlPedidos = "SELECT COUNT(cod_pedido) FROM pedido WHERE data_entrega > CURRENT_DATE();";
+      $result = $PDO->prepare($sqlPedidos);
+      if($result->execute()){
+        $pedidos = $result->fetchColumn();
+      } else {
+        $result->errorInfo();
+      }
+
+      $sqlReceitas = "SELECT COUNT(cod_receita) FROM receita";
+      $result = $PDO->prepare($sqlReceitas);
+      if($result->execute()){
+        $receita = $result->fetchColumn();
+      } else {
+        $result->errorInfo();
+      }
+
+      $sqlFornecedor = "SELECT COUNT(cod_fornecedor) FROM fornecedor";
+      $result = $PDO->prepare($sqlFornecedor);
+      if($result->execute()){
+        $fornecedor = $result->fetchColumn();
+      } else {
+        $result->errorInfo();
+      }
+    ?>
 
     <div class="container-fluid">
       <div class="row">
@@ -66,7 +96,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" onclick="chamarTela('relatorio')">
                 <span class="fas fa-pen"></span>
                   Relatorios
                 </a>
@@ -86,24 +116,75 @@
             <h1 class="h2">Dashboard</h1>
           </div>
 
-          <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+          <div class="container">
+            <div class="row justify-content-md-center">
+              <div class="col-sm">
+                <div class="card">
+                  <div class="card-body">
+                  <div class="row">
+                    <i class="fas fa-utensils fa-3x ml-3"></i>
+                    <h5 class="card-title ml-4">Ingredientes</h5>
+                  </div>
+                    <p class="card-text text-center" style="font-size:3em"><?php echo($ingredientes) ?></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card">
+                  <div class="card-body">
+                  <div class="row">
+                    <i class="fas fa-list-alt fa-3x ml-3"></i>
+                    <h5 class="card-title ml-4">Pedidos para<br>entrega</h5>
+                  </div>
+                    <p class="card-text text-center" style="font-size:3em"><?php echo($pedidos) ?></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card">
+                  <div class="card-body">
+                  <div class="row">
+                    <i class="fas fa-paste fa-3x"></i>
+                    <h5 class="card-title ml-5">Receitas</h5>
+                  </div>
+                  <p class="card-text text-center" style="font-size:3em"><?php echo($receita) ?></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="card">
+                  <div class="card-body">
+                  <div class="row">
+                    <i class="fas fa-dolly fa-3x"></i>
+                    <h5 class="card-title ml-5">Fornecedores <br> cadastrados</h5>
+                  </div>
+                  <p class="card-text text-center" style="font-size:3em"><?php echo($fornecedor) ?></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <h2>Section title</h2>
+
+          <h2 class="mt-5">Pedidos da última semana</h2>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
+                  <th>Data do pedido</th>
+                  <th>Data de entrega</th>
+                  <th>Cliente</th>
+                  <th>Valor Pedido</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  $PDO = db_connect();
-                  $pedidos = $PDO->query("SELECT * FROM pedido WHERE data_pedido > CURRENT_DATE()-7");
+                  $pedidos = $PDO->query("SELECT cod_pedido, data_pedido, data_entrega, c.razao_social, valor_pedido
+                                          FROM pedido p 
+                                          INNER JOIN cliente c 
+                                          ON c.cod_cliente = p.cod_cliente
+                                          WHERE data_pedido > CURRENT_DATE()-7");
                   if (is_array($pedidos) || is_object($pedidos))
                     {
                       foreach($pedidos as $pedido) {
@@ -111,7 +192,7 @@
                               <td class="align-middle">'. $pedido["cod_pedido"] .'</td>
                               <td class="align-middle">'. $pedido["data_pedido"] .'</td>
                               <td class="align-middle">'. $pedido["data_entrega"] .'</td>
-                              <td class="align-middle">'. $pedido["cod_cliente"] .'</td>
+                              <td class="align-middle">'. $pedido["razao_social"] .'</td>
                               <td class="align-middle">'. $pedido["valor_pedido"] .'</td>
                             </tr>');
                       }

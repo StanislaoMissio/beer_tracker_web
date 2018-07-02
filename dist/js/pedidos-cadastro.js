@@ -31,7 +31,7 @@ function cadastrarPedido(){
   $.ajax({
     type: "POST",
     url: "pedido-insert.php",
-    data: { cnpj: cnpj, cliente: cliente, entrega: entrega, produtos: produtosJson }
+    data: { cliente: cliente, entrega: entrega, produtos: produtosJson }
   }).done( function(response) {
     if(response == 'true'){
       window.location.href = 'pedidos-cadastro.php';

@@ -60,10 +60,6 @@
           </tbody>
         </table>
       </div>
-                
-        <button type="button" class="btn" onclick="location.href='../register/pedidos-cadastro.php'">
-        Novo Pedido
-      </button>
     </main>
 
     <div class="modal fade" id="editModalPedido" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -33,6 +33,8 @@ function cadastrarPedido(){
     url: "pedido-insert.php",
     data: { cnpj: cnpj, cliente: cliente, entrega: entrega, produtos: produtosJson }
   }).done( function(response) {
-    document.write(response);
+    if(response == 'true'){
+      window.location.href = 'pedidos-cadastro.php';
+    }
   });
 }

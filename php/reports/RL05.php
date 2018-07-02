@@ -5,10 +5,7 @@
     <?php  
       $PDO = db_connect(); 
 
-      $sql = "SELECT * FROM ingrediente i
-      LEFT JOIN ingrediente_receita ir ON ir.cod_ingrediente = i.cod_ingrediente
-      LEFT JOIN receita r ON r.cod_receita = ir.cod_receita
-      WHERE r.cod_receita IS NOT NULL;";
+      $sql = "SELECT * FROM lote l INNER JOIN produto p ON p.cod_produto = l.cod_produto";
 
       $stmt = $PDO->prepare($sql);
       $stmt->execute();
@@ -16,27 +13,39 @@
     ?>
     <div class="row">
       <div class="col-md-8">
-        <h2>Relatório de ingredientes</h2>
+        <h2>Listagem de Lotes</h2>
       </div>
     </div>
     <div class="table-responsive">
       <table class="table table-striped table-sm">
         <thead>
           <tr>
-            <th>ID Ingrediente</th>
-            <th>Ingrediente</th>
-            <th>Descrição ingrediente</th>
-            <th>Receita</th>
+            <th class="text-center">Número do Lote</th>
+            <th>Inicio</th>
+            <th>Envase</th>
+            <th>Fermentação</th>
+            <th>Data final</th>
+            <th>OG</th>
+            <th>IBU</th>
+            <th>FG</th>
+            <th>Produto</th>
+            <th>Mililitros</th>
           </tr>
         </thead>
         <?php foreach($info as $row): ?>                     
                       
         <tbody>
           <tr>
-            <td><?=$row["cod_ingrediente"]?></td>
-            <td><?=$row["nome_ingrediente"]?></td>
-            <td><?=$row["descricao_ingrediente"]?></td>
-            <td><?=$row["nome_receita"]?></td>
+            <td class="text-center"><?=$row["cod_lote"]?></td>
+            <td><?=$row["data_inicio"]?></td>
+            <td><?=$row["data_envase"]?></td>
+            <td><?=$row["data_fermentacao"]?></td>
+            <td><?=$row["data_fim"]?></td>
+            <td><?=$row["indice_og"]?></td>
+            <td><?=$row["indice_ibu"]?></td>
+            <td><?=$row["indice_fg"]?></td>
+            <td><?=$row["nome_produto"]?></td>
+            <td><?=$row["ml"]?></td>
           </tr>                               
         </tbody>
           <?php endforeach; ?>

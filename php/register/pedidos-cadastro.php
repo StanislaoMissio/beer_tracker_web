@@ -26,13 +26,6 @@
           <form class="needs-validation" novalidate>
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="firstName">CNPJ</label>
-                <input type="text" class="form-control" id="cnpj" placeholder="CNPJ" value="" required>
-                <div class="invalid-feedback">
-                  Insira CNPJ.
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
                 <label for="lastName">Entrega</label>
                 <input type="date" class="form-control" id="entrega" placeholder="Data da entrega" value="" required>
                 <div class="invalid-feedback">

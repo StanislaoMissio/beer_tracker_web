@@ -6,43 +6,51 @@
       <?php  
           $PDO = db_connect(); 
 
-          $sql = "SELECT * FROM cervejaria.fornecedor f
-          LEFT JOIN fornecedor_ingrediente fi ON fi.cod_fornecedor = f.cod_fornecedor
-          LEFT JOIN ingrediente i ON i.cod_ingrediente = fi.cod_ingrediente;";
+          $sql = 
+                "SELECT p.nome_produto, p.preco_produto, r.nome_receita, r.descricao_receita,
+                r.tempo_fervura, r.tempo_fermentacao, r.tempo_brasagem, r.tempo_variacao, r.tempo_repouso, COUNT(r.cod_receita) as receitas_feitas
+                FROM produto p 
+                INNER JOIN receita r
+                ON r.cod_receita = p.cod_receita
+                GROUP BY r.cod_receita";
   
           $stmt = $PDO->prepare($sql);
           $stmt->execute();
           $info = $stmt->fetchAll();
       ?>
         <div class="col-md-8">
-          <h2>Listagem Fornecedores</h2>
+          <h2>Listagem de Produtos</h2>
         </div>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Fornecedor</th>
-                  <th>Endereço</th>
-                  <th>Cidade</th>
-                  <th>Telefone</th>
-                  <th>E-mail</th>
-                  <th>Produto</th>
-                  <th>Descrição</th>
+                  <th class="align-middle">Produto</th>
+                  <th class="align-middle">Preço</th>
+                  <th class="align-middle">Receita</th>
+                  <th class="align-middle">Descrição da receita</th>
+                  <th class="align-middle">Fervura</th>
+                  <th class="align-middle">Fermentação</th>
+                  <th class="align-middle">Brasagem</th>
+                  <th class="align-middle">Variação</th>
+                  <th class="align-middle">Repouso</th>
+                  <th class="align-middle">Quantidade de receitas feitas</th>
                 </tr>
               </thead>
               <?php foreach($info as $row): ?>                     
                            
               <tbody>
                 <tr>
-                  <td><?=$row["cod_fornecedor"]?></td>
-                  <td><?=$row["razao_social_fornecedor"]?></td>
-                  <td><?=$row["endereco_fornecedor"]?></td>
-                  <td><?=$row["cidade_fornecedor"]?></td>
-                  <td><?=$row["telefone_fornecedor"]?></td>
-                  <td><?=$row["email_fornecedor"]?></td>
-                  <td><?=$row["nome_ingrediente"]?></td>
-                  <td><?=$row["descricao_ingrediente"]?></td>
+                  <td class="align-middle"><?=$row["nome_produto"]?></td>
+                  <td class="align-middle"><?=$row["preco_produto"]?></td>
+                  <td class="align-middle"><?=$row["nome_receita"]?></td>
+                  <td class="align-middle"><?=$row["descricao_receita"]?></td>
+                  <td class="align-middle"><?=$row["tempo_fervura"]?></td>
+                  <td class="align-middle"><?=$row["tempo_fermentacao"]?></td>
+                  <td class="align-middle"><?=$row["tempo_brasagem"]?></td>
+                  <td class="align-middle"><?=$row["tempo_variacao"]?></td>
+                  <td class="align-middle"><?=$row["tempo_repouso"]?></td>
+                  <td class="align-middle"><?=$row["receitas_feitas"]?></td>
                 </tr>                               
               </tbody>
                 <?php endforeach; ?>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="shortcut icon" href="/img/favicon.png">
 
     <title>GND | Systems</title>
 
@@ -113,7 +114,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" id="main">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Dashboard</h1>
+            <h1 class="h2">Home</h1>
           </div>
 
           <div class="container">
@@ -144,8 +145,8 @@
                 <div class="card">
                   <div class="card-body">
                   <div class="row">
-                    <i class="fas fa-paste fa-3x"></i>
-                    <h5 class="card-title ml-5">Receitas</h5>
+                    <i class="fas fa-paste fa-3x ml-3"></i>
+                    <h5 class="card-title ml-4">Receitas</h5>
                   </div>
                   <p class="card-text text-center" style="font-size:3em"><?php echo($receita) ?></p>
                   </div>
@@ -155,8 +156,8 @@
                 <div class="card">
                   <div class="card-body">
                   <div class="row">
-                    <i class="fas fa-dolly fa-3x"></i>
-                    <h5 class="card-title ml-5">Fornecedores <br> cadastrados</h5>
+                    <i class="fas fa-dolly fa-3x ml-3"></i>
+                    <h5 class="card-title ml-4">Fornecedores <br> cadastrados</h5>
                   </div>
                   <p class="card-text text-center" style="font-size:3em"><?php echo($fornecedor) ?></p>
                   </div>

@@ -2,7 +2,6 @@
     require_once('../utils/init.php');
 
     // pega os dados do formuário
-    $cnpj = isset($_POST['cnpj']) ? $_POST['cnpj'] : null;
     $cliente = isset($_POST['cliente']) ? $_POST['cliente'] : null;   
     $entrega = isset($_POST['entrega']) ? $_POST['entrega'] : null;   
     $produtos = isset($_POST['produtos']) ? $_POST['produtos'] : null;
@@ -18,7 +17,7 @@
     // insere no banco
     $PDO = db_connect();
 
-    $sqlPedido = "INSERT INTO pedido(data_pedido, data_entrega, cod_cliente, valor_pedido_total)
+    $sqlPedido = "INSERT INTO pedido(data_pedido, data_entrega, cod_cliente, valor_pedido)
                   VALUES(DATE_FORMAT(NOW(), '%Y,%m,%d'), :entrega,
                   :cliente, :total)";
 
@@ -30,7 +29,7 @@
     if($stmtPedido->execute()){
         $codPedido = $PDO->lastInsertId();
     } else {
-        $response = $stmtItemPedido->errorInfo();
+        $response = $stmtPedido->errorInfo();
     }
 
     if(!is_null($codPedido) || !empty($codPedido)) {

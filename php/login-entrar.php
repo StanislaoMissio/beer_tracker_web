@@ -29,7 +29,7 @@ if ($stmt->execute()){
         echo "Email ou senha incorretos";
         exit;
     }
-    header ('Location: index.php');
+    header ('Location: index/index.php');
 }
 
 else {
